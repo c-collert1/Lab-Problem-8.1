@@ -2,15 +2,22 @@
 #include <string>
 using namespace std;
 
-int countCharacter(string str);
+int countVowel(string str);
 
 int main() {
 
-	cout << countCharacter("hello world!");
+	cout << countVowel("hello world!");
+
 
 }
 
-int countCharacter(string str) {
+int countVowel(string str) {
 
-	return str.length();
+	int vowelCounter = 0;
+	for (int i = 0; i < str.length(); i++) {
+		string currentLetter = str.substr(i, 1);
+		if (currentLetter == "a" || currentLetter == "e" || currentLetter == "i" || currentLetter == "o" || currentLetter == "u" || currentLetter == "A" || currentLetter == "E" || currentLetter == "I" || currentLetter == "O" || currentLetter == "U")
+			vowelCounter++;
+	}
+	return vowelCounter;
 }
